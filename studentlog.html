@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <?!= include('JavaScript'); ?>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 60%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+label {
+  padding: 12px 12px 12px 80px;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #BC544B;
+  color: white;
+  padding: 12px 12px 12px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: inherit;
+  width: 250px;
+}
+
+input[type=submit]:hover {
+  background-color: #BC544B;
+  padding: 12px 12px 12px 12px;
+  width: 250px;
+}
+
+<!--.container {-->
+<!--  border-radius: 5px;-->
+<!--  background-color: #f2f2f2;-->
+<!--  padding: 20px;-->
+<!--}-->
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 80%;
+    margin-top: 0;
+  }
+  .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 3px solid green;
+}
+}
+  * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    body {
+        background-image: url('https://prev.iitbhu.ac.in/sites/default/files/institute/media/others/img/gallery_apd.jpg');
+        background-size: cover;
+        font-family: sans-serif;
+        margin-top: 40px;
+        height: 200vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    table {
+        border: 1px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 86%;
+        margin: auto;
+    }
+
+    td,
+    th {
+        border: 1px solid black !important;
+        /* padding: 5px; */
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>AI Based Attendance Management System</title>
+    <base target="_top">
+
+
+</head>
+<body>
+<br><br>
+    <div class='mt-3 text-center'>
+        <h1 style="width: auto;margin: auto;color: white;padding: 11px;font-size: 44px;">AI Based
+            Attendance Management System</h1>
+            <h3 style="width: auto;margin: auto;color: white;padding: 11px;font-size: 30px;">CSE Department, IIT(BHU)</h3>
+    </div>
+
+     <div class="row text-center" style="padding: 20px;margin: 20px;">
+<div class="container">
+  <div class="col"
+            style="border-radius: 20px;padding: 0px;background-color:rgb(211,211,211,0.5);margin:0px 10px 10px 10px;height: 400px;">
+
+                <h2 style="border-radius: 20px 20px 0px 0px;background-color: #BC544B;color: white;padding: 10px;">Student Registration<i class="material-icons">assignment</i></h2>
+  <form id="myForm1" action="classcode.html " onsubmit="handleFormSubmit1(this)">
+
+     <div class="row">
+    <div class="col-25">
+      <label for="sid">Student Id</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="sid" name="sid" placeholder="Your studentID..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="cid">Course Id</label>
+    </div>
+    <div class="col-75">
+      <select id="cid" name="cid">
+        <option value="Select courseID">Select courseID</option>
+        <option value="CSO123">CSO123</option>
+        <option value="CSO123">CSO123</option>
+        <option value="CSO123">CSO123</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="ccode">Class Code</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="ccode" name="cccode" placeholder="Your class code..">
+    </div>
+  </div>
+
+<script>
+    var output = document.getElementById('output');
+    var first = document.getElementById('first');
+    document.getElementById('subButton').addEventListener('click', function(e){
+     e.preventDefault();
+     output.innerHTML = first.value;
+     //var myData = {'first':first.value}
+     console.log(this.parentNode);
+     google.script.run.withSuccessHandler(onSuccess).doUpload(this.parentNode);
+    })
+    function onSuccess(data){
+     console.log(data);
+     if(data.status){
+     output.innerHTML = 'Image uploaded <br> <a href="'+data.url+'" target="_blank">'+data.url+'</a>';
+     }
+    }
+    </script>
+  <br>
+
+  <br>
+<br>
+
+  <input type="submit" onClick="showMessage()" value="View attendance" ></div>
+
+
+  </form>
+</div>
+</div>
+
+</body>
+</html>
+
+

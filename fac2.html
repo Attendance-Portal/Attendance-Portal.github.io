@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 60%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+label {
+  padding: 12px 12px 12px 80px;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #BC544B;
+  color: white;
+  padding: 12px 12px 12px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: inherit;
+  width: 250px;
+}
+
+input[type=submit]:hover {
+  background-color: #BC544B;
+  padding: 12px 12px 12px 12px;
+  width: 250px;
+}
+
+<!--.container {-->
+<!--  border-radius: 5px;-->
+<!--  background-color: #f2f2f2;-->
+<!--  padding: 20px;-->
+<!--}-->
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 80%;
+    margin-top: 0;
+  }
+  .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 3px solid green;
+}
+}
+  * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    body {
+        background-image: url('https://prev.iitbhu.ac.in/sites/default/files/institute/media/others/img/gallery_apd.jpg');
+        background-size: cover;
+        font-family: sans-serif;
+        margin-top: 40px;
+        height: 200vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    table {
+        border: 1px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 86%;
+        margin: auto;
+    }
+
+    td,
+    th {
+        border: 1px solid black !important;
+        /* padding: 5px; */
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>AI Based Attendance Management System</title>
+
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function randomString() {
+    var chars = "0123456789";
+    var string_length = 3;
+    var randomstring = '';
+    for (var i=0; i<string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstring += chars.substring(rnum,rnum+1);
+    }
+    document.getElementById('randomfield').value = randomstring;
+
+    //or even this as you are using JQuery
+    //$('#randomfield').val(randomstring);
+}
+
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/ztjHVmWE3bnvBJxO/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+<!--          var queryString = "?class_code=" + randomstring;-->
+<!--          window.location.href = "randno.html" + queryString;-->
+          location.replace("randno.html")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body onload="randomString(this);" data-target="#myModal">
+<br><br>
+    <div class='mt-3 text-center'>
+        <h1 style="width: auto;margin: auto;color: white;padding: 11px;font-size: 44px;">AI Based
+            Attendance Management System</h1>
+            <h3 style="width: auto;margin: auto;color: white;padding: 11px;font-size: 30px;">CSE Department, IIT(BHU)</h3>
+    </div>
+
+     <div class="row text-center" style="padding: 20px;margin: 20px;">
+<div class="container">
+  <div class="col"
+            style="border-radius: 20px;padding: 0px;background-color:rgb(211,211,211,0.5);margin:0px 10px 10px 10px;height: 400px;">
+
+                <h2 style="border-radius: 20px 20px 0px 0px;background-color: #BC544B;color: white;padding: 10px;">Class Code Generation<i class="material-icons">assignment</i></h2>
+  <form id="myForm" action="randno.html" method="POST">
+     <div class="row">
+    <div class="col-25">
+      <label for="fname">Faculty Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="faculty_name" placeholder="Your name..">
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="email">Institute Email</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="email" name="email" placeholder="Your email..">
+    </div>
+  </div>
+     <div class="row">
+    <div class="col-25">
+      <label for="eid">Employee Id</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="eid" name="employee_id" placeholder="Your employeeID..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="cid">Course Id</label>
+    </div>
+    <div class="col-75">
+      <select id="cid" name="course_id">
+        <option value="Select courseID">Select courseID</option>
+        <option value="CSO123">CSO123</option>
+        <option value="CSO123">CSO123</option>
+        <option value="CSO123">CSO123</option>
+      </select>
+    </div>
+  </div>
+<input type="hidden" id="randomfield" value="" name="random_no" align="centre">
+    <br/>
+    <br/>
+  </form></div></div>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html>
