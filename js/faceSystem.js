@@ -19,13 +19,13 @@ $(document).ready(function(){
 //        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
 //        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
-//, , 'AshutoshSingh',  ,'AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam'
+//,
 // , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna','YuvrajJagdhane''Vishvender', 'Vivek'
 
         const labels = ['monika','khushboo', 'Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket', 'AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev', 
                         'Divyanth',
 'Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika', 'Rupsona', 'Samridhdi', 'Sandipam',
-     'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal','Kaushik.jpg', 'Kushagra.jpg', 'Ananya']
+     'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal','Kaushik.jpg', 'Kushagra.jpg', 'Ananya' , 'AshutoshSingh',  ,'AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
         //'','Tejavath,
 
         const labeledFaceDescriptors = await Promise.all(
