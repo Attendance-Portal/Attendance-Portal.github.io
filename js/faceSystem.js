@@ -28,7 +28,7 @@ $(document).ready(function(){
      'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal','Kaushik.jpg', 'Kushagra.jpg']
                         //,'AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
 
-]
+
         //'','Tejavath,'Ananya' , 'AshutoshSingh'
 
         const labeledFaceDescriptors = await Promise.all(
