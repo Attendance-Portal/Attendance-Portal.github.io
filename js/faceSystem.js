@@ -20,20 +20,14 @@ $(document).ready(function(){
 //        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
 //,
-// , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna','YuvrajJagdhane''Vishvender', 'Vivek','Tejavath,','Tejavath,'Ananya' , 'AshutoshSingh' ,'Kaushik.jpg', 'Kushagra.jpg','AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
+// , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna','YuvrajJagdhane''Vishvender', 'Vivek','Tejavath,'Ananya' , 'AshutoshSingh' ,'Kaushik.jpg', 'Kushagra.jpg','AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
 
-        const labels = ['monika','khushboo','Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket',
-                        'AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev', 
-                        'Divyanth','Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika', 
-                        'Rupsona', 'Samridhdi', 'Sandipam', 'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal']
-
-
-
+        const labels = ['monika','khushboo','Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket','AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev','Divyanth','Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika','Rupsona', 'Samridhdi', 'Sandipam', 'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal']
 
         const labeledFaceDescriptors = await Promise.all(
             labels.map(async label => {
 
-                const imgUrl = `images/${label}.jpg`
+                const imgUrl = 'images/${label}.jpg'
                 const img = await faceapi.fetchImage(imgUrl)
 
                 const faceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
