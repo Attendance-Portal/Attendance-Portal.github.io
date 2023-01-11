@@ -22,10 +22,11 @@ $(document).ready(function(){
 //,
 // , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna','YuvrajJagdhane''Vishvender', 'Vivek'
 
-        const labels = ['monika','khushboo', 'Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket', 'AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev', 
-                        'Divyanth',
-'Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika', 'Rupsona', 'Samridhdi', 'Sandipam',
-     'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal']
+        const labels = ['monika','khushboo']
+        //, 'Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket', 'AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev', 
+                     //   'Divyanth',
+//'Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika', 'Rupsona', 'Samridhdi', 'Sandipam',
+    // 'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal']
                         //,'Kaushik.jpg', 'Kushagra.jpg','AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
 
 
