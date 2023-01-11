@@ -34,7 +34,7 @@ $(document).ready(function(){
                 if (!faceDescription) {
                 throw new Error(`no faces detected for ${label}`)
                 }
-                alert("label: "+label)
+                document.write("label: "+label)
                 const faceDescriptors = [faceDescription.descriptor]
                 return new faceapi.LabeledFaceDescriptors(label, faceDescriptors)
             })
@@ -48,6 +48,7 @@ $(document).ready(function(){
         results.forEach((bestMatch, i) => {
             const box = faceDescriptions[i].detection.box
             const text = bestMatch.toString()
+            document.write("text: "+text)
             const drawBox = new faceapi.draw.DrawBox(box, { label: text })
             drawBox.draw(canvas)
         })
