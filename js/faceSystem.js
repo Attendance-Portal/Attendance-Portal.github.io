@@ -19,11 +19,9 @@ $(document).ready(function(){
 //        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
 //        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
-//,
 // , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna','YuvrajJagdhane''Vishvender', 'Vivek','Tejavath,'Ananya' , 'AshutoshSingh' ,'Kaushik.jpg', 'Kushagra.jpg','AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam']
 
-        const labels = ['monika','khushboo']
-
+        const labels = ['monika','khushboo','Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket','AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev','Divyanth','Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika','Rupsona', 'Samridhdi', 'Sandipam', 'Sanskar', 'Sarthak', 'Sejal', 'ShantanuSingh', 'Shivam', 'Shweta','Srajan', 'Vansh','Vikas','Vinod', 'Vishal']
 
         const labeledFaceDescriptors = await Promise.all(
             labels.map(async label => {
@@ -36,7 +34,7 @@ $(document).ready(function(){
                 if (!faceDescription) {
                 throw new Error(`no faces detected for ${label}`)
                 }
-
+                alert("label: "+label)
                 const faceDescriptors = [faceDescription.descriptor]
                 return new faceapi.LabeledFaceDescriptors(label, faceDescriptors)
             })
