@@ -12,9 +12,12 @@
     <body>
         <img src="images/20221121_104219.jpg" id="originalImg" width="800" height="800" />
         <br><br>
-        <a href="images/20221121_104219.jpg" download>
-        Download
-        </a>
+        <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerHTML = 
+        "<a href="+window.location.href+" Download> Download </a>";
+        </script>
         <canvas id="reflay" class="overlay"></canvas>
 
         <script src="js/jquery-2.1.1.min.js"></script>
