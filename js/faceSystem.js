@@ -2,7 +2,7 @@ $(document).ready(function(){
                 
     async function face(){
         
-        const MODEL_URL = 'models'
+        const MODEL_URL = '/models'
 
         await faceapi.loadSsdMobilenetv1Model(MODEL_URL)
         await faceapi.loadFaceLandmarkModel(MODEL_URL)
