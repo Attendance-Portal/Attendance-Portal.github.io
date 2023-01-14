@@ -16,8 +16,8 @@ $(document).ready(function(){
 
         faceDescriptions = faceapi.resizeResults(faceDescriptions, img)
         faceapi.draw.drawDetections(canvas, faceDescriptions)
-        //faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
-        //faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
+        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
+        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
        
         const labels = ['monika','khushboo']
@@ -29,8 +29,7 @@ $(document).ready(function(){
                 const imgUrl = `images/${label}.jpg`
                 const img = await faceapi.fetchImage(imgUrl)
                 
-                const faceDescription = await faceapi.detectSingleFace(img)
-                //.withFaceLandmarks().withFaceDescriptor()
+                const faceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 
                 if (!faceDescription) {
                 throw new Error(`no faces detected for ${label}`)
