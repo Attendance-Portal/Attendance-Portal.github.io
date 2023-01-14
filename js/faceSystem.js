@@ -53,7 +53,7 @@ $(document).ready(function(){
         results.forEach((bestMatch, i) => {
             const box = faceDescriptions[i].detection.box
             const text = bestMatch.toString()
-            document.write({ label: i })
+//             document.write({ label: i })
             const drawBox = new faceapi.draw.DrawBox(box, { label: i })
             drawBox.draw(canvas)
         })
