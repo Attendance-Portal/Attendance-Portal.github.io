@@ -2,7 +2,7 @@ $(document).ready(function(){
                 
     async function face(){
         
-        const MODEL_URL = 'models'
+        const MODEL_URL = '/models'
 
         await faceapi.loadSsdMobilenetv1Model(MODEL_URL)
         await faceapi.loadFaceLandmarkModel(MODEL_URL)
@@ -16,14 +16,11 @@ $(document).ready(function(){
 
         faceDescriptions = faceapi.resizeResults(faceDescriptions, img)
         faceapi.draw.drawDetections(canvas, faceDescriptions)
-//         faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
-//         faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
+        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
+        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
         
-//         const labels = ['ross', 'rachel', 'chandler', 'monica', 'phoebe', 'joey', , 'Sejal','ShantanuSingh', 'Shivam', 'Shweta','Srajan',, 'Vansh','Vikas','Vinod', 'Vishal']
-        
-        const labels = ['monika','khushboo']
-//         ,'Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit', 'Aniket','AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu',  'Dev','Divyanth','Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash','Ritika','Rupsona', 'Samridhdi', 'Sandipam', 'Sanskar', 'Sarthak']
+        const labels = ['monika','khushboo','Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit', 'Aniket','AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu',  'Dev','Divyanth','Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash','Ritika','Rupsona', 'Samridhdi', 'Sandipam', 'Sanskar', 'Sarthak']
 
         const labeledFaceDescriptors = await Promise.all(
             labels.map(async label => {
@@ -31,8 +28,7 @@ $(document).ready(function(){
                 const imgUrl = `images/${label}.jpg`
                 const img = await faceapi.fetchImage(imgUrl)
                 
-                const faceDescription = await faceapi.detectSingleFace(img)
-//                 .withFaceLandmarks().withFaceDescriptor()
+                const faceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 
                 if (!faceDescription) {
                 throw new Error(`no faces detected for ${label}`)
