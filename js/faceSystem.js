@@ -16,11 +16,10 @@ $(document).ready(function(){
 
         faceDescriptions = faceapi.resizeResults(faceDescriptions, img)
         faceapi.draw.drawDetections(canvas, faceDescriptions)
-//         faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
-//         faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
+        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
+        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
-        
-//         const labels = ['ross', 'rachel', 'chandler', 'monica', 'phoebe', 'joey']
+  
         const labels = ['monika','khushboo']
 
         const labeledFaceDescriptors = await Promise.all(
