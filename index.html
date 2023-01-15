@@ -70,6 +70,35 @@
         <script src="js/face-api.js"></script>
 <!--         <script src="js/faceSystem.js"></script> -->
         <script src="one.js"></script>
+        <table id="myTable" class="table table-bordred table-striped">
+     <thead>
+    <tr style="color:white">
+      <th>Serial no.</th>
+      <th>Student Roll Number</th>
+      <th><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></th>
+      <th><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
+    </th>
+    </tr>
+  </thead>
+  <tbody id="testBody">
+     <td><p data-placement="top" data-toggle="tooltip" title="serialno" >
+       <!-- <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > id="sno"-->
+         <!-- <span class="glyphicon glyphicon-pencil"></span></button> -->
+         </p></td>
+    <td><p data-placement="top" data-toggle="tooltip" title="rollNo" >
+      <!-- <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >id="rno" -->
+        <!-- <span class="glyphicon glyphicon-trash"></span></button> -->
+        </p></td>
+    <td><p data-placement="top" data-toggle="tooltip"  onclick="edit_row() title="edit">
+      <!-- <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" > id="edit"-->
+        <!-- <span class="glyphicon glyphicon-trash"></span></button> -->
+        </p></td>
+    <td><p data-placement="top" data-toggle="tooltip" title="ok">
+      <!-- <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" > -->
+        <!-- <span class="glyphicon glyphicon-trash"></span></button> -->
+        </p></td></tbody>
+
+</table>
     </body>
 </html>
 
