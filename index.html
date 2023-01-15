@@ -134,8 +134,14 @@ justify-content: center;
 </nav></header>
 <br>
     <body>
-        <img src="https://prev.iitbhu.ac.in/sites/default/files/institute/media/others/img/gallery_apd.jpg" onclick="popup()" id="originalImg" width="800" height="800" />
+        <img src="images/20221123_105414.jpg" onclick="popup()" id="originalImg" width="800" height="800" />
         <canvas id="reflay" width="800" height="800" class="overlay" onclick="popup()"></canvas>
+	            <button type="button" onclick="LatestPost();" class="btn btn-default">Take a Screenshot!</button>
+
+	 <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/face-api.js"></script>
+<!--         <script src="js/faceSystem.js"></script> -->
+        <script src="one.js"></script>
         <script type="text/javascript">
         var canvas = document.getElementById('reflay');
 var ctx = canvas.getContext('2d');
