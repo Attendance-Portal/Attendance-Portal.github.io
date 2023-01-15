@@ -16,12 +16,9 @@ $(document).ready(function(){
 
         faceDescriptions = faceapi.resizeResults(faceDescriptions, img)
         faceapi.draw.drawDetections(canvas, faceDescriptions)
-//        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
-//        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
+        faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
+        faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
-//, 'Kaushik.jpg', 'Kushagra.jpg', 'Ananya', 'AshutoshSingh',  ,'AyushDubey' ,'BaniSingh','Banoth', 'Harshit', 'Kaushik', 'gautam'
-// , 'Sejal', 'Saumya', 'Shrivats', 'Suparna', 'Suchita', 'Srajan', 'Suchita', , 'Suparna', 
-      //'ShantanuSingh','Shivam',,  'Shweta','Srajan','Tejavath', 'Vansh','Vikas','Vinod', 'Vishal', 'Vishvender', 'Vivek', 'YuvrajJagdhane'
         const labels = ['monika','khushboo','Kareena', 'Aarya', 'AaryaSuhas', 'Abhinav', 'AbhishekKumarSingh','Adarsh', 'Aditi', 'Advait', 'Amit','Aniket', 
                         'AnkitKumar', 'Aruprakash','Aryan', 'AryanGupta', 'AryanSrivastava', 'Aryman', 'Bharat', 'chandler', 'Chandu', 'Dev', 'Divyanth',
                         'Lisha', 'Mudavath', 'Nikhil', 'Nunavath','Priyansh', 'Rachaprolu', 'Rajdeep', 'Rajitha', 'RajPrakash', 'Ritika', 'Rupsona', 
@@ -33,11 +30,10 @@ $(document).ready(function(){
                 const imgUrl = 'images/${label}.jpg'
                 const img = await faceapi.fetchImage(imgUrl)
 
-                const faceDescription = await faceapi.detectSingleFace(img)
-                //.withFaceLandmarks().withFaceDescriptor()
+                const faceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
 
                 if (!faceDescription) {
-                throw new Error(`no faces detected for ${label}`)
+                throw new Error('no faces detected for ${label}')
                 }
 
                 const faceDescriptors = [faceDescription.descriptor]
@@ -50,17 +46,18 @@ $(document).ready(function(){
         const table = document.getElementById("testBody");
         const results = faceDescriptions.map(fd => faceMatcher.findBestMatch(fd.descriptor))
         j=100;
+        let row = table.insertRow();
+        let date = row.insertCell(0);
+        let name = row.insertCell(1);
+        edit = row.insertCell(2);
+        save = row.insertCell(3);
         results.forEach((bestMatch, i) => {
             const box = faceDescriptions[i].detection.box
             const text = i.toString()+" "+bestMatch.toString()
-
-
-            let row = table.insertRow();
-            let date = row.insertCell(0);
             date.innerHTML = i.toString();
-            let name = row.insertCell(1);
             name.innerHTML = bestMatch.toString();
-            save = row.insertCell(2);
+            edit.innerHTML = "edit";
+            save.innerHTML = "ok" 
             document.write(text)
             const drawBox = new faceapi.draw.DrawBox(box, { label: text })
             drawBox.draw(canvas)
