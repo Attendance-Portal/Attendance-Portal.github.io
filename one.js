@@ -41,7 +41,7 @@ $(document).ready(function(){
             })
         );
 
-        const threshold = 0.6
+        const threshold = 0.5
         const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, threshold)
         const table = document.getElementById("testBody");
         const results = faceDescriptions.map(fd => faceMatcher.findBestMatch(fd.descriptor))
