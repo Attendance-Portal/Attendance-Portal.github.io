@@ -2,7 +2,7 @@ $(document).ready(function(){
                 
     async function face(){
         
-        const MODEL_URL = 'https://drive.google.com/drive/folders/1BxHDRUwDIBTrI6i5khzecDJbwxkrXMs3?usp=share_link'
+        const MODEL_URL = '/models'
 
         await faceapi.loadSsdMobilenetv1Model(MODEL_URL)
         await faceapi.loadFaceLandmarkModel(MODEL_URL)
